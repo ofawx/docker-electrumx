@@ -1,5 +1,4 @@
 FROM python:3.7-alpine3.11
-LABEL maintainer="Luke Childs <lukechilds123@gmail.com>"
 
 COPY ./bin /usr/local/bin
 COPY ./VERSION /tmp
