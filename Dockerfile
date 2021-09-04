@@ -6,7 +6,8 @@ COPY ./bin /usr/local/bin
 
 RUN chmod a+x /usr/local/bin/* && \
     apk add --no-cache git build-base openssl && \
-    apk add --no-cache leveldb-dev rocksdb-dev && \
+    apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/main leveldb-dev && \
+    apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing rocksdb-dev && \
     pip install aiohttp pylru plyvel websockets python-rocksdb uvloop && \
     git clone -b $VERSION https://github.com/spesmilo/electrumx.git && \
     cd electrumx && \
